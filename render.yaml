@@ -1,10 +1,6 @@
 services:
   - type: web
     name: java-quiz-website
-    env: static
-    buildCommand: echo "No build required for static site"
-    staticPublishPath: .
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+    env: node
+    buildCommand: yarn install
+    startCommand: yarn start

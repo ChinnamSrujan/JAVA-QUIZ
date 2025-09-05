@@ -2,10 +2,13 @@
   "name": "java-quiz-website",
   "version": "1.0.0",
   "description": "Interactive Java MCQ Quiz Website - Test your Java programming knowledge",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
-    "start": "echo 'Static site - no server needed'",
-    "build": "echo 'No build process required'"
+    "start": "node server.js",
+    "build": "echo 'No build required for static site'"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   },
   "keywords": [
     "java",
