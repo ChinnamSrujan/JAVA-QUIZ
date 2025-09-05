@@ -1,0 +1,27 @@
+{
+  "name": "java-quiz-website",
+  "version": "1.0.0",
+  "description": "Interactive Java MCQ Quiz Website - Test your Java programming knowledge",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Static site - no server needed'",
+    "build": "echo 'No build process required'"
+  },
+  "keywords": [
+    "java",
+    "quiz",
+    "mcq",
+    "programming",
+    "education",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/java-quiz-website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/java-quiz-website.git"
+  }
+}

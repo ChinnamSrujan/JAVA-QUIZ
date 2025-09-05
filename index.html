@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☕ Java MCQ Quiz - Test Your Java Knowledge</title>
+    <meta name="description" content="Test your Java programming knowledge with our comprehensive MCQ quiz covering OOP, data types, inheritance, and more.">
+    <meta name="keywords" content="Java quiz, MCQ, programming, OOP, inheritance, polymorphism, Java test">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .quiz-setup {
+            text-align: center;
+        }
+
+        .quiz-setup h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .quiz-setup select {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            background: white;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .question-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .options {
+            list-style: none;
+        }
+
+        .option {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: #e3f2fd;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100%;
+            transition: width 0.3s;
+        }
+
+        .results {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .score {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .performance-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>☕ Java MCQ Quiz</h1>
+            <p>Test your knowledge of Java programming concepts</p>
+        </div>
+
+        <div class="content">
+            <!-- Quiz Setup -->
+            <div id="quiz-setup" class="quiz-setup">
+                <h2>🚀 Ready to test your Java knowledge?</h2>
+                <p>Select the number of questions you'd like to attempt and start the quiz!</p>
+                <br>
+                <select id="num-questions">
+                    <option value="5">5 questions</option>
+                    <option value="10">10 questions</option>
+                    <option value="15" selected>15 questions</option>
+                    <option value="20">20 questions</option>
+                    <option value="25">25 questions</option>
+                    <option value="30">30 questions</option>
+                    <option value="50">50 questions</option>
+                    <option value="54">All 54 questions</option>
+                </select>
+                <br>
+                <button class="btn" onclick="startQuiz()">Start Quiz</button>
+            </div>
+
+            <!-- Quiz Questions -->
+            <div id="quiz-container" class="hidden">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div id="current-question" class="stat-number">1</div>
+                        <div class="stat-label">Current Question</div>
+                    </div>
+                    <div class="stat">
+                        <div id="total-questions" class="stat-number">15</div>
+                        <div class="stat-label">Total Questions</div>
+                    </div>
+                    <div class="stat">
+                        <div id="current-score" class="stat-number">0</div>
+                        <div class="stat-label">Score</div>
+                    </div>
+                </div>
+
+                <div id="question-container" class="question-container">
+                    <div id="question-number" class="question-number">Question 1 of 15</div>
+                    <div id="question-text" class="question-text"></div>
+                    <ul id="options" class="options"></ul>
+                </div>
+
+                <div style="text-align: center;">
+                    <button id="submit-btn" class="btn" onclick="submitAnswer()" disabled>Submit Answer</button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="results-container" class="hidden results">
+                <h2>🎉 Quiz Completed!</h2>
+                <div id="final-score" class="score">0/15</div>
+                <div id="percentage" class="score" style="font-size: 2rem;">0%</div>
+                <div id="performance-message" class="performance-message"></div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div id="correct-answers" class="stat-number">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat">
+                        <div id="incorrect-answers" class="stat-number">0</div>
+                        <div class="stat-label">Incorrect</div>
+                    </div>
+                    <div class="stat">
+                        <div id="final-percentage" class="stat-number">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                </div>
+
+                <button class="btn" onclick="restartQuiz()">Start New Quiz</button>
+            </div>
+
+            <div class="footer">
+                <p>© 2024 Java MCQ Quiz - Test your programming skills</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz_data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
